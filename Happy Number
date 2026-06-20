@@ -1,0 +1,37 @@
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class Main {
+
+    public static int sumOfSquares(int num) {
+        int sum = 0;
+
+        while (num > 0) {
+            int digit = num % 10;
+            sum += digit * digit;
+            num /= 10;
+        }
+
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int num = sc.nextInt();
+
+        HashSet<Integer> visited = new HashSet<>();
+
+        while (num != 1 && !visited.contains(num)) {
+            visited.add(num);
+            num = sumOfSquares(num);
+        }
+
+        if (num == 1) {
+            System.out.println("Happy Number");
+        } else {
+            System.out.println("Not a Happy Number");
+        }
+    }
+}
+

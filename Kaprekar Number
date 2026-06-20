@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int num = sc.nextInt();
+
+        int square = num * num;
+
+        int digits = String.valueOf(num).length();
+
+        int divisor = (int) Math.pow(10, digits);
+
+        int leftPart = square / divisor;
+        int rightPart = square % divisor;
+
+        if (rightPart > 0 && (leftPart + rightPart == num)) {
+            System.out.println("Kaprekar Number");
+        } else {
+            System.out.println("Not a Kaprekar Number");
+        }
+    }
+}

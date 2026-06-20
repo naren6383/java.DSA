@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int num = sc.nextInt();
+        int original = num;
+
+        String str = String.valueOf(num);
+
+        int sum = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+            int digit = str.charAt(i) - '0';
+            sum += (int) Math.pow(digit, i + 1);
+        }
+
+        if (sum == original)
+            System.out.println("Disarium Number");
+        else
+            System.out.println("Not a Disarium Number");
+    }
+}

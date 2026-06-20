@@ -1,0 +1,35 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int num = sc.nextInt();
+
+        ArrayList<Integer> even = new ArrayList<>();
+        ArrayList<Integer> odd = new ArrayList<>();
+
+        while (num > 0) {
+            int digit = num % 10;
+
+            if (digit % 2 == 0)
+                even.add(0, digit); // Maintain original order
+            else
+                odd.add(0, digit);
+
+            num /= 10;
+        }
+
+        System.out.print("Even Digits: ");
+        for (int d : even) {
+            System.out.print(d + " ");
+        }
+
+        System.out.println();
+
+        System.out.print("Odd Digits: ");
+        for (int d : odd) {
+            System.out.print(d + " ");
+}
+}

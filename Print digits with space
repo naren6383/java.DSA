@@ -1,0 +1,21 @@
+mport java.util.Scanner;
+
+public class Main {
+
+    public static void printDigits(int num) {
+        if (num == 0) {
+            return;
+        }
+
+        printDigits(num / 10);
+        System.out.print(num % 10 + " ");
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int num = sc.nextInt();
+
+        printDigits(num);
+    }
+}
